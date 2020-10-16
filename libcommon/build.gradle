@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        buildTypes {
+            debug {
+                minifyEnabled false
+                buildConfigField 'String', 'SERVER_URL', '"http://test.baidu.com"'
+            }
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                buildConfigField 'String', 'SERVER_URL', '"http://test.baidu.com"'
+            }
+        }
+        resourcePrefix "comm_"
+
+        dataBinding {
+            enabled = true
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        api "$deps.support.app_compat"
+        api "$deps.support.design"
+        api "$deps.constraint_layout"
+        api "$deps.support.recyclerview"
+        //For Lifecycle, LiveData, and ViewModel
+        api "$deps.lifecycle.extensions"
+        api "$deps.lifecycle.java8"
+        //For Lifecycle Java8 language support
+        annotationProcessor "$deps.lifecycle.compiler"
+        //For Lifecycle Room
+        api "$deps.room.runtime"
+        annotationProcessor "$deps.room.compiler"
+        /*for java dagger2*/
+        api "$deps.dagger.runtime"
+        annotationProcessor "$deps.dagger.compiler"
+        /*for android dagger2*/
+        api "$deps.dagger.android"
+        /*for android support libraries*/
+        api "$deps.dagger.android_support"
+        annotationProcessor "$deps.dagger.android_support_compiler"
+        api "$deps.timber"
+        /*glide*/
+        api "$deps.glide"
+        annotationProcessor "$deps.glide_compiler"
+
+        api "$deps.okhttp.okhttp"
+        api "$deps.retrofit.runtime"
+        api "$deps.retrofit.gson"
+        api 'com.google.code.gson:gson:2.8.2'
+        api 'com.google.zxing:core:3.3.3'
+
+        api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        api 'androidx.core:core-ktx:1.1.0'
+
+        api "$deps.arouter.api"
+        annotationProcessor "$deps.arouter.compiler"
+    }
+}

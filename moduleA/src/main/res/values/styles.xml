@@ -1,0 +1,10 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="ModAAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/moda_color_primary</item>
+        <item name="colorPrimaryDark">@color/moda_color_primary_dark</item>
+        <item name="colorAccent">@color/moda_color_accent</item>
+    </style>
+
+</resources>

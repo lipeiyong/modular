@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+
+    defaultConfig {
+        applicationId "com.lpy.modularization"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField 'String', 'SERVER_URL', '"http://test.baidu.com"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'SERVER_URL', '"http://www.baidu.com"'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(':libcommon')
+
+    annotationProcessor "$deps.dagger.compiler"
+    annotationProcessor "$deps.dagger.android_support_compiler"
+
+    annotationProcessor "$deps.room.compiler"
+
+    annotationProcessor "$deps.arouter.compiler"
+
+    if(!isRunModuleA.toBoolean()){
+        implementation project(path: ':moduleA')
+    }
+    if(!isRunModuleB.toBoolean()){
+        implementation project(path: ':moduleB')
+    }
+    if(!isRunModuleC.toBoolean()){
+        implementation project(path: ':moduleC')
+    }
+}

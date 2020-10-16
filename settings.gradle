@@ -1,0 +1,9 @@
+include ':moduleC'
+include ':moduleB'
+rootProject.name = "Modularization"
+//主项目
+include ':app'
+//公共类库
+include ':libcommon'
+//模块A
+include ':moduleA'

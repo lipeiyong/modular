@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="CommAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/comm_color_primary</item>
+        <item name="colorPrimaryDark">@color/comm_color_primary_dark</item>
+        <item name="colorAccent">@color/comm_color_accent</item>
+    </style>
+
+    <style name="comm_dialog_style" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/comm_tram</item>
+        <item name="android:windowAnimationStyle">@style/CommDialogAnimation</item>
+    </style>
+
+    <style name="CommDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style>
+
+    <!-- 加载滚动条样式 -->
+    <style name="comm_prog_load">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateDrawable">@drawable/comm_icon_prog_load</item>
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:indeterminateOnly">true</item>
+    </style>
+
+    <style name="CommToolsBarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar" tools:ignore="ResourceName">
+        <item name="titleTextAppearance">@style/CommToolsBarTitleTextAppearance</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>-
+        <item name="android:theme">@null</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="CommToolsBarTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/comm_title_color</item>
+    </style>
+
+</resources>
