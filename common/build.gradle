@@ -56,7 +56,5 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
     implementation 'com.google.zxing:core:3.3.3'
-
-    implementation 'com.lpy:common:1.0.1'
 }
 

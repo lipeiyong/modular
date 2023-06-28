@@ -15,6 +15,7 @@ chore：构建过程或辅助工具的变动
 revert：回滚到上一个版本
 merge：代码合并
 sync：同步主线或分支的Bug
+maven：maven仓库管理
 
 subject
 subject是 commit 目的的简短描述，不超过50个字符，且结尾不加句号（.）。

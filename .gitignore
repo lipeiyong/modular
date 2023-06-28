@@ -6,3 +6,4 @@ build/
 local.properties
 */release
 */debug
+/github.properties

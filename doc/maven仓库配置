@@ -1,6 +1,23 @@
+官方教程
+https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry
+参考资料
+https://vegeta2102.medium.com/how-to-publish-android-library-to-github-package-as-a-maven-repository-4709de7608ab
+
 本地仓库
 根目录下的repos
 
+步骤
 打包:Gradle-->Tasks-->other-->assembleRelease
-发布:Gradle-->Tasks-->publishing-->publishDevPublicationToMavenRepository
+发布:Gradle-->Tasks-->publishing-->publish
+引用: implementation 'com.lpy:common:1.0.2'
+
+
+github read package token
+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
+
+
+获取 github userId
+https://api.github.com/users/lipeiyong
+
+
 

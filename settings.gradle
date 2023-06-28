@@ -15,7 +15,17 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         //本地仓库
-        maven { url 'repos' }
+//        maven { url "${rootProject.projectDir}/repos" }
+
+        maven {
+            // Replace GITHUB_USERID with your personal or organisation user ID and
+            // REPOSITORY with the name of the repository on GitHub
+            url = uri("https://maven.pkg.github.com/lipeiyong/modularization")
+            credentials {
+                username = 'visitor'
+                password = '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'
+            }
+        }
 
         //阿里源
         maven { url 'https://maven.aliyun.com/repository/public/' }

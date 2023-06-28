@@ -102,5 +102,7 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.3'
     //动态路由
     annotationProcessor "$deps.arouter.compiler"
+
+    implementation 'com.lpy:common:1.0.4'
 }
 
