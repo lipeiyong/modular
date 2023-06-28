@@ -7,7 +7,6 @@ def versions = [:]
 versions.arch_core = "2.0.0"
 versions.room = "2.0.0"
 versions.lifecycle = "2.2.0"
-versions.support = "1.1.0"
 versions.dagger = "2.17"
 versions.junit = "4.12"
 versions.espresso = "3.2.0"
@@ -32,20 +31,9 @@ versions.kotlin = "1.2.20"
 versions.paging = "2.0.0"
 versions.glassfish = "10.0-b28"
 versions.stetho = "1.5.0"
-versions.arouter = "1.4.1"
-versions.arouter_compiler = "1.2.2"
+versions.arouter = "1.5.2"
+versions.arouter_compiler = "1.5.2"
 def deps = [:]
-
-def support = [:]
-support.annotations = "androidx.annotation:annotation:$versions.support"
-support.app_compat = "androidx.appcompat:appcompat:$versions.support"
-support.recyclerview = "androidx.recyclerview:recyclerview:$versions.support"
-support.cardview = "androidx.cardview:cardview:$versions.support"
-support.design = "com.google.android.material:material:$versions.support"
-support.v4 = "androidx.legacy:legacy-support-v4:$versions.support"
-support.core_utils = "androidx.legacy:legacy-support-core-utils:$versions.support"
-support.v7 = "androidx.appcompat:appcompat:$versions.support"
-deps.support = support
 
 def room = [:]
 room.runtime = "androidx.room:room-runtime:$versions.room"
@@ -79,9 +67,7 @@ deps.okhttp = okhttp
 def dagger = [:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
 dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
-dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
 dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
-dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
 
 deps.dagger = dagger
 
@@ -136,10 +122,10 @@ deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_g
 ext.deps = deps
 
 def build_versions = [:]
-build_versions.compile_sdk = 28
-build_versions.min_sdk = 19
-build_versions.target_sdk = 28
-build_versions.build_tools = "28.0.3"
+build_versions.compile_sdk = 32
+build_versions.min_sdk = 24
+build_versions.target_sdk = 32
+build_versions.build_tools = "32.0.0"
 ext.build_versions = build_versions
 
 

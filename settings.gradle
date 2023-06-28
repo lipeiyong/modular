@@ -1,9 +1,38 @@
-include ':moduleC'
-include ':moduleB'
+pluginManagement {
+    repositories {
+        //阿里源
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        //阿里源
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+
+        google()
+        mavenCentral()
+    }
+}
 rootProject.name = "Modularization"
+
 //主项目
 include ':app'
-//公共类库
-include ':libcommon'
-//模块A
 include ':moduleA'
+include ':moduleB'
+include ':moduleC'
+
+//公共类库
+include ':common'
+//模块A
+include ':communication'

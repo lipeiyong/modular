@@ -3,8 +3,8 @@ package com.lpy.modularization.ui;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.komlin.libcommon.base.BaseActivity;
-import com.komlin.libcommon.arouter.RouteUtils;
+import com.lpy.comm.RouteUtils;
+import com.lpy.common.base.BaseActivity;
 import com.lpy.modularization.R;
 import com.lpy.modularization.databinding.ActivityMainBinding;
 

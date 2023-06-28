@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk build_versions.compile_sdk
+
+    defaultConfig {
+        minSdk build_versions.min_sdk
+        targetSdk build_versions.target_sdk
+
+        buildTypes {
+            debug {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+        resourcePrefix "com_"
+
+        dataBinding {
+            enabled = true
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        /**用于校验编码是否规范（例如方法过时、弃用）**/
+//        allprojects {
+//            gradle.projectsEvaluated {
+//                tasks.withType(JavaCompile) {
+//                    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+//                }
+//            }
+//        }
+    }
+
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        implementation 'com.google.android.material:material:1.4.0'
+
+        //网络请求
+        implementation "$deps.retrofit.runtime"
+        implementation "$deps.retrofit.gson"
+        //日志
+        api "$deps.timber"
+        //glide
+        implementation 'com.github.bumptech.glide:glide:4.15.1'
+        implementation 'com.google.zxing:core:3.3.3'
+    }
+
+}

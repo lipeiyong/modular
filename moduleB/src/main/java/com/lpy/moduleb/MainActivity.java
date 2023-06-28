@@ -4,9 +4,9 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.komlin.libcommon.arouter.RouteUtils;
-import com.komlin.libcommon.arouter.communication.IModuleCService;
-import com.komlin.libcommon.base.standard.BaseActivity;
+import com.lpy.comm.IModuleCService;
+import com.lpy.comm.RouteUtils;
+import com.lpy.common.base.standard.BaseActivity;
 import com.lpy.moduleb.databinding.ModbActivityMainBinding;
 
 import java.util.Locale;

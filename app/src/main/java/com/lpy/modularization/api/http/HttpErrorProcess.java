@@ -4,25 +4,25 @@ import android.app.Application;
 import android.util.SparseArray;
 import android.widget.Toast;
 
-import com.komlin.libcommon.api.Resource;
-import com.komlin.libcommon.util.AppExecutors;
+import com.lpy.common.api.Resource;
+import com.lpy.common.util.AppExecutors;
 
 import java.util.concurrent.Executor;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+//import javax.inject.Inject;
+//import javax.inject.Singleton;
 
 /**
  * @author lipeiyong
  */
-@Singleton
+//@Singleton
 public class HttpErrorProcess {
 
     private final Executor appExecutors;
     private final Application application;
     private SparseArray<Runnable> runnableSparseArray;
 
-    @Inject
+//    @Inject
     HttpErrorProcess(AppExecutors appExecutors, Application application) {
         this.appExecutors = appExecutors.mainThread();
         this.application = application;
