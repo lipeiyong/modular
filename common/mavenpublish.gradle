@@ -1,0 +1,58 @@
+apply plugin: 'maven-publish'
+
+//生成文档注释
+task androidJavadocs(type: Javadoc) {
+    failOnError = false
+    source = android.sourceSets.main.java.srcDirs
+    ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+    classpath += files(ext.androidJar)
+}
+//将文档打包成jar
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    archiveClassifier.set('javadoc')
+    from androidJavadocs.destinationDir
+}
+//将源码打包
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+
+publishing {
+    publications {
+        dev(MavenPublication) {//dev是我取的名称，可以自定义
+            groupId = 'com.lpy'//域名反写
+            artifactId = 'common'//aar的名称
+            version = '1.0.1'//版本号
+            artifact(androidSourcesJar)//将源码打包进aar，如果不需要可以去掉
+            artifact(androidJavadocsJar)//将注释打包进aar，如果不需要可以去掉
+            artifact "build/outputs/aar/common-release.aar"//aar包的目录
+            pom.withXml{
+                def dependenciesNode = asNode().appendNode("dependencies")
+                configurations.implementation.allDependencies.forEach(){
+                    Dependency dependency ->
+                        if (dependency.version != "unspecified" && dependency.name != "unspecified"){
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', dependency.group)
+                            dependencyNode.appendNode('artifactId', dependency.name)
+                            dependencyNode.appendNode('version', dependency.version)
+                        }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            //maven仓库的地址(https://raw.githubusercontent.com/{username}/{projeceName}/{branch})
+//            url = "https://raw.githubusercontent.com/lipeiyong/modularization/master"
+            //仓库的用户名及密码
+//            credentials {
+//                username '593741576@qq.com'
+//                password 'grdwa62020182'
+//            }
+            //没有maven仓库也可以使用本地仓库
+            url = "file://${projectDir}/../repos"
+        }
+    }
+}

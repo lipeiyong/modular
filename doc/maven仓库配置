@@ -1,0 +1,6 @@
+本地仓库
+根目录下的repos
+
+打包:Gradle-->Tasks-->other-->assembleRelease
+发布:Gradle-->Tasks-->publishing-->publishDevPublicationToMavenRepository
+
