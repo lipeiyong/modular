@@ -33,7 +33,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/lipeiyong/modular")
             credentials {
                 username = 'visitor'
-                password = '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'
+                password = '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'
             }
         }
     }
