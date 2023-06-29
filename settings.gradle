@@ -33,12 +33,12 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/lipeiyong/modularization")
             credentials {
                 username = 'visitor'
-                password = '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'
+                password = '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'
             }
         }
     }
 }
-rootProject.name = "Modularization"
+rootProject.name = "modular"
 
 //主项目
 include ':app'

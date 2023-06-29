@@ -1,4 +1,4 @@
-package com.lpy.modularization
+package com.lpy.modular
 
 import org.junit.Test
 

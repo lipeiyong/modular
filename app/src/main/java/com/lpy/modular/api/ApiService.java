@@ -1,4 +1,4 @@
-package com.lpy.modularization.api;
+package com.lpy.modular.api;
 
 /**
  * @author lipeiyong

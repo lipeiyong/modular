@@ -1,12 +1,13 @@
-package com.lpy.modularization.ui;
+package com.lpy.modular.ui;
 
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lpy.comm.RouteUtils;
 import com.lpy.common.base.BaseActivity;
-import com.lpy.modularization.R;
-import com.lpy.modularization.databinding.ActivityMainBinding;
+import com.lpy.modular.R;
+import com.lpy.modular.databinding.ActivityMainBinding;
+
 
 /**
  * @author lipeiyong

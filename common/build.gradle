@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
 }
-apply from: './mavenpublish.gradle'
+apply from: './maven.gradle'
 
 
 android {

@@ -6,7 +6,7 @@ android {
     compileSdk build_versions.compile_sdk
 
     defaultConfig {
-        applicationId "com.lpy.modularization"
+        applicationId "com.lpy.modular"
         minSdk build_versions.min_sdk
         targetSdk build_versions.target_sdk
         versionCode 1

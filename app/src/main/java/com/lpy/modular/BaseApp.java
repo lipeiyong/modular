@@ -1,4 +1,4 @@
-package com.lpy.modularization;
+package com.lpy.modular;
 
 
 import android.app.Application;
@@ -23,7 +23,7 @@ public class BaseApp extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
-        SP_Utils.init(this, "modularization");
+        SP_Utils.init(this, "modular");
         initLogs();
         if (BuildConfig.DEBUG) {
             ARouter.openLog();
@@ -37,7 +37,7 @@ public class BaseApp extends Application {
             Timber.plant(new Timber.DebugTree() {
                 @Override
                 protected void log(int priority, String tag, String message, Throwable t) {
-                    super.log(priority, "modularization-" + tag, message, t);
+                    super.log(priority, "modular-" + tag, message, t);
                 }
             });
         }
