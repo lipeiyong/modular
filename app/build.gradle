@@ -103,6 +103,6 @@ dependencies {
     //动态路由
     annotationProcessor "$deps.arouter.compiler"
 
-    implementation 'com.lpy:common:1.0.4'
+    implementation 'com.lpy.modular:common:1.0.0'
 }
 

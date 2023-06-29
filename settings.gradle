@@ -30,10 +30,10 @@ dependencyResolutionManagement {
         maven {
             // Replace GITHUB_USERID with your personal or organisation user ID and
             // REPOSITORY with the name of the repository on GitHub
-            url = uri("https://maven.pkg.github.com/lipeiyong/modularization")
+            url = uri("https://maven.pkg.github.com/lipeiyong/modular")
             credentials {
                 username = 'visitor'
-                password = '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'
+                password = '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'
             }
         }
     }
