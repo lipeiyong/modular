@@ -50,8 +50,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/lipeiyong/modular")
             credentials {
-                username props['username']
-                password props['token']
+                username props['publish_username']
+                password props['publish_token']
             }
             //没有maven仓库也可以使用本地仓库
 //            url = "file://${rootProject.projectDir}/repos"
