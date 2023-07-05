@@ -27,7 +27,16 @@ dependencyResolutionManagement {
         //本地仓库
 //        maven { url "${rootProject.projectDir}/repos" }
 
-
+        maven {
+            // Replace GITHUB_USERID with your personal or organisation user ID and
+            // REPOSITORY with the name of the repository on GitHub
+            url = uri("https://maven.pkg.github.com/lipeiyong/modular")
+            //这部分代码不能提交到github.提交的话会导致token被删除
+            credentials {
+                username = 'visitor'
+                password = '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'
+            }
+        }
     }
 }
 rootProject.name = "modular"
@@ -40,5 +49,8 @@ include ':moduleC'
 
 //公共类库
 include ':common'
-//模块A
+//通信库
 include ':communication'
+//Socket
+include ':socket'
+include ':test'
