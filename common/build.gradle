@@ -10,37 +10,38 @@ android {
     defaultConfig {
         minSdk build_versions.min_sdk
         targetSdk build_versions.target_sdk
+    }
 
-        buildTypes {
-            debug {
-                minifyEnabled false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
-            release {
-                minifyEnabled false
-                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        resourcePrefix "com_"
-
-        dataBinding {
-            enabled = true
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    resourcePrefix "com_"
 
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
+    dataBinding {
+        enabled = true
+    }
 
-        /**用于校验编码是否规范（例如方法过时、弃用）**/
-//        allprojects {
-//            gradle.projectsEvaluated {
-//                tasks.withType(JavaCompile) {
-//                    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-//                }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    /**用于校验编码是否规范（例如方法过时、弃用）**/
+//    allprojects {
+//        gradle.projectsEvaluated {
+//            tasks.withType(JavaCompile) {
+//                options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
 //            }
 //        }
-    }
+//    }
+
 }
 
 
